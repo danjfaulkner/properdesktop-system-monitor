@@ -5,7 +5,7 @@
 Version=1.0
 Name=System Monitor
 Comment=View resource usage and manage running processes
-Exec=cutefish-system-monitor
+Exec=properdesktop-system-monitor
 Icon=utilities-system-monitor
 Terminal=false
 Type=Application

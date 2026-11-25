@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-using namespace cutefish::ui;
+using namespace properdesktop::ui;
 
 TextMetrics textMetrics(const Label* label)
 {

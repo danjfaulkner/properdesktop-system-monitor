@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: cutefish-system-monitor\n"
-"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"Project-Id-Version: properdesktop-system-monitor\n"
+"Report-Msgid-Bugs-To: https://github.com/danjfaulkner\n"
 "POT-Creation-Date: 2026-11-23 23:43+0800\n"
 "PO-Revision-Date: 2026-11-13 15:22+0800\n"
 "Last-Translator: \n"
@@ -189,7 +189,7 @@ msgstr "磁盘"
 msgid "GPU {number}"
 msgstr "GPU {number}"
 
-#: src/views/mainwindow.cpp cutefish-system-monitor.desktop
+#: src/views/mainwindow.cpp properdesktop-system-monitor.desktop
 msgid "System Monitor"
 msgstr "系统监视器"
 
@@ -615,11 +615,11 @@ msgstr "{used}，共 {total}"
 msgid "Active"
 msgstr "活跃"
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "View resource usage and manage running processes"
 msgstr "查看资源使用情况并管理正在运行的进程"
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "CPU;Memory;Network;Disk;Processes;"
 msgstr "CPU;Memory;Network;Disk;Processes;处理器;内存;网络;磁盘;进程;任务管理器;"
 

@@ -19,7 +19,7 @@
 #include <fstream>
 #include <string>
 
-using namespace cutefish;
+using namespace properdesktop;
 using namespace std::chrono_literals;
 
 int main(int argc, char** argv)

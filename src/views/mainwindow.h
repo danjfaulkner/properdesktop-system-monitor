@@ -17,7 +17,7 @@ class Monitor;
 class ProcessDetails;
 class ResourcePage;
 
-namespace cutefish::ui {
+namespace properdesktop::ui {
 class AboutDialog;
 class ConfirmDialog;
 }
@@ -30,7 +30,7 @@ public:
     explicit MainWindow(Monitor& monitor);
     ~MainWindow();
 
-    cutefish::ui::Window& window() { return m_window; }
+    properdesktop::ui::Window& window() { return m_window; }
     int currentPage() const { return m_page; }
     void setCurrentPage(int page);
     // Shows, raises and activates the window.
@@ -42,8 +42,8 @@ public:
     ProcessesPage* processesPage() const { return m_processes; }
     ResourcePage* resourcePage() const { return m_resource; }
     ProcessDetails* details() const { return m_details.get(); }
-    cutefish::ui::Menu& contextMenu() { return m_contextMenu; }
-    cutefish::ui::ConfirmDialog* confirmDialog() const { return m_confirm.get(); }
+    properdesktop::ui::Menu& contextMenu() { return m_contextMenu; }
+    properdesktop::ui::ConfirmDialog* confirmDialog() const { return m_confirm.get(); }
 
 private:
     class Root;
@@ -53,7 +53,7 @@ private:
     // The menus the menu bar shows while the window is active.
     void buildMainMenu();
     // The View menu's pages and intervals, as they are now.
-    void fillViewMenu(cutefish::ui::Menu* view);
+    void fillViewMenu(properdesktop::ui::Menu* view);
     // The processes, the four resources, then one page per GPU (at least one).
     int pageCount() const;
     std::string pageTitle(int page) const;
@@ -65,20 +65,20 @@ private:
     void updateContextMenu();
 
     Monitor& m_monitor;
-    cutefish::ui::Window m_window;
+    properdesktop::ui::Window m_window;
     // Errors from ending processes, as FishUI's passive notification.
-    cutefish::ui::Toast m_toast;
+    properdesktop::ui::Toast m_toast;
     Root* m_root;
     Selection m_selection;
     int m_page = 0;
     ProcessesPage* m_processes;
     ResourcePage* m_resource = nullptr;
-    std::unique_ptr<cutefish::ui::Menu> m_mainMenu;
-    cutefish::ui::Menu m_contextMenu;
-    std::unique_ptr<cutefish::ui::AboutDialog> m_about;
-    std::unique_ptr<cutefish::ui::ConfirmDialog> m_confirm;
+    std::unique_ptr<properdesktop::ui::Menu> m_mainMenu;
+    properdesktop::ui::Menu m_contextMenu;
+    std::unique_ptr<properdesktop::ui::AboutDialog> m_about;
+    std::unique_ptr<properdesktop::ui::ConfirmDialog> m_confirm;
     std::unique_ptr<ProcessDetails> m_details;
-    cutefish::base::Subscription m_updated;
-    cutefish::base::Subscription m_intervalChanged;
-    cutefish::base::Subscription m_languageChanged;
+    properdesktop::base::Subscription m_updated;
+    properdesktop::base::Subscription m_intervalChanged;
+    properdesktop::base::Subscription m_languageChanged;
 };

@@ -42,8 +42,8 @@ public:
     static std::string programName(const ProcessRecord& process);
 
     // After the rows or their data changed.
-    cutefish::base::Signal<> changed;
-    cutefish::base::Signal<> sortingChanged;
+    properdesktop::base::Signal<> changed;
+    properdesktop::base::Signal<> sortingChanged;
 
 private:
     bool accepts(const ProcessRecord& process) const;

@@ -16,8 +16,8 @@
 
 #include <algorithm>
 
-using namespace cutefish::ui;
-using cutefish::i18n::tr;
+using namespace properdesktop::ui;
+using properdesktop::i18n::tr;
 
 static constexpr double kPadding = 12;
 static constexpr double kIcon = 16;

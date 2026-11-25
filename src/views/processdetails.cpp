@@ -25,11 +25,11 @@
 #include <ctime>
 #include <unistd.h>
 
-using namespace cutefish::ui;
-using cutefish::i18n::format;
-using cutefish::i18n::tr;
-using cutefish::i18n::trn;
-using cutefish::i18n::trNoop;
+using namespace properdesktop::ui;
+using properdesktop::i18n::format;
+using properdesktop::i18n::tr;
+using properdesktop::i18n::trn;
+using properdesktop::i18n::trNoop;
 
 static constexpr double kTop = 8;
 static constexpr double kSpacing = 12;
@@ -393,11 +393,11 @@ private:
             return "—";
         const int64_t started = m_bootTime + int64_t(process.startTicks / uint64_t(ticks));
         const int64_t now = int64_t(std::time(nullptr));
-        const cutefish::base::Locale& locale = cutefish::base::Locale::system();
-        const auto start = cutefish::base::DateTime::fromSecondsSinceEpoch(started);
-        const bool today = start.date == cutefish::base::DateTime::fromSecondsSinceEpoch(now).date;
-        const std::string time = today ? locale.toString(start.time, cutefish::base::Locale::FormatType::Short)
-                                       : locale.toString(start, cutefish::base::Locale::FormatType::Short);
+        const properdesktop::base::Locale& locale = properdesktop::base::Locale::system();
+        const auto start = properdesktop::base::DateTime::fromSecondsSinceEpoch(started);
+        const bool today = start.date == properdesktop::base::DateTime::fromSecondsSinceEpoch(now).date;
+        const std::string time = today ? locale.toString(start.time, properdesktop::base::Locale::FormatType::Short)
+                                       : locale.toString(start, properdesktop::base::Locale::FormatType::Short);
         // TRANSLATORS: how long a process has run and when it started, such as "2 h 5 min, since 14:03".
         return format(tr("{duration}, since {time}"), {{"duration", Monitor::formatDuration(now - started)}, {"time", time}});
     }
@@ -446,7 +446,7 @@ void ProcessDetails::show()
 {
     m_dialog.show();
     if (Window* window = m_dialog.window())
-        window->addShortcut(cutefish::ui::NoModifier, cutefish::ui::key::Escape, [this] { m_dialog.close(); });
+        window->addShortcut(properdesktop::ui::NoModifier, properdesktop::ui::key::Escape, [this] { m_dialog.close(); });
 }
 
 void ProcessDetails::update()

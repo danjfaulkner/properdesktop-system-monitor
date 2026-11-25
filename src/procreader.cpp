@@ -14,7 +14,7 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 
-using cutefish::i18n::tr;
+using properdesktop::i18n::tr;
 
 // python, perl, ruby and lua with any version suffix, and a few more.
 static bool isScriptInterpreter(std::string_view name)

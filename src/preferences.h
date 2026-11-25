@@ -5,7 +5,7 @@
 
 #include <string>
 
-// The monitor's choices in ~/.config/cutefish/system-monitor.conf.
+// The monitor's choices in ~/.config/properdesktop/system-monitor.conf.
 struct Preferences
 {
     // Milliseconds.

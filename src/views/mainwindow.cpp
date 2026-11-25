@@ -26,11 +26,11 @@
 #include <algorithm>
 #include <optional>
 
-using namespace cutefish::ui;
-using cutefish::i18n::format;
-using cutefish::i18n::tr;
-using cutefish::i18n::trn;
-using cutefish::i18n::trNoop;
+using namespace properdesktop::ui;
+using properdesktop::i18n::format;
+using properdesktop::i18n::tr;
+using properdesktop::i18n::trn;
+using properdesktop::i18n::trNoop;
 
 static constexpr double kSidebarWidth = 240;
 static constexpr double kHeaderHeight = 48;

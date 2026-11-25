@@ -262,7 +262,7 @@ TEST_F(MonitorTest, HistoryPerGpu)
 TEST_F(MonitorTest, RememberedPreferences)
 {
     TemporaryDirectory directory;
-    const std::string file = directory.path() + "/cutefish/system-monitor.conf";
+    const std::string file = directory.path() + "/properdesktop/system-monitor.conf";
     ASSERT_TRUE(writeFile(file, "[WindowSize]\nMain=@Size(840 600)\n"));
     {
         Monitor monitor({}, file);

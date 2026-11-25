@@ -25,7 +25,7 @@
 #include <vector>
 
 using namespace std::chrono_literals;
-namespace base = cutefish::base;
+namespace base = properdesktop::base;
 namespace fs = std::filesystem;
 
 inline std::string processStat(int pid, const std::string& name, uint64_t ticks, uint64_t start, uint32_t flags = 0)

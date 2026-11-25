@@ -17,12 +17,12 @@ class Plate;
 class ProcessList;
 struct ProcessRecord;
 
-namespace cutefish::ui {
+namespace properdesktop::ui {
 class Icon;
 class Label;
 class SearchField;
 class SegmentedControl;
-} // namespace cutefish::ui
+} // namespace properdesktop::ui
 
 // The process the window acts on: its PID and start time, as the list it was
 // picked from names it.
@@ -35,7 +35,7 @@ struct Selection
 
 // The process list's rows; Up and Down move the selection, Return opens it
 // and Delete asks to quit it.
-class ProcessListView : public cutefish::ui::ListView
+class ProcessListView : public properdesktop::ui::ListView
 {
 public:
     bool acceptsFocus() const override { return true; }
@@ -45,10 +45,10 @@ public:
     std::function<void()> onQuit;
 
 protected:
-    bool keyPress(const cutefish::ui::KeyEvent& event) override;
+    bool keyPress(const properdesktop::ui::KeyEvent& event) override;
 };
 
-class ProcessesPage : public cutefish::ui::View
+class ProcessesPage : public properdesktop::ui::View
 {
 public:
     ProcessesPage(Monitor& monitor, Selection& selection);
@@ -66,7 +66,7 @@ public:
     std::function<void()> onSelectionChanged;
     std::function<void()> onOpenDetails;
     std::function<void(bool force)> onConfirmEnd;
-    std::function<void(cutefish::ui::PointF position)> onContextMenu;
+    std::function<void(properdesktop::ui::PointF position)> onContextMenu;
 
 protected:
     void layout() override;
@@ -84,15 +84,15 @@ private:
 
     Monitor& m_monitor;
     Selection& m_selection;
-    cutefish::ui::SegmentedControl* m_scope;
-    cutefish::ui::SearchField* m_search;
+    properdesktop::ui::SegmentedControl* m_scope;
+    properdesktop::ui::SearchField* m_search;
     QuitButton* m_quit;
     Plate* m_table;
     std::vector<ColumnHeader*> m_headers;
     View* m_hairline;
     ProcessListView* m_list;
     View* m_empty;
-    cutefish::ui::Label* m_emptyTitle;
-    cutefish::ui::Label* m_emptyText;
-    std::vector<cutefish::base::Subscription> m_subscriptions;
+    properdesktop::ui::Label* m_emptyTitle;
+    properdesktop::ui::Label* m_emptyText;
+    std::vector<properdesktop::base::Subscription> m_subscriptions;
 };

@@ -5,7 +5,7 @@
 
 #include "ui/theme.h"
 
-using namespace cutefish::ui;
+using namespace properdesktop::ui;
 
 void addMonitorColors(ColorMixer& mixer, const Theme& theme)
 {

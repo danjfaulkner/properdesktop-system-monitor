@@ -107,9 +107,9 @@ public:
     static std::string formatDuration(int64_t seconds);
 
     // After every published sample, and after the interval changed.
-    cutefish::base::Signal<> updated;
-    cutefish::base::Signal<> intervalChanged;
-    cutefish::base::Signal<> scopeChanged;
+    properdesktop::base::Signal<> updated;
+    properdesktop::base::Signal<> intervalChanged;
+    properdesktop::base::Signal<> scopeChanged;
 
 private:
     struct Application
@@ -137,11 +137,11 @@ private:
     std::unordered_map<std::string, Application> m_programs;
     uint64_t m_samples = 0;
     std::shared_ptr<ProcReader> m_reader;
-    cutefish::base::Job m_sampleJob;
-    cutefish::base::Job m_volumeJob;
+    properdesktop::base::Job m_sampleJob;
+    properdesktop::base::Job m_volumeJob;
     std::vector<Volume> m_volumes;
-    cutefish::base::Timer m_timer;
-    cutefish::base::Timer m_baselineTimer;
+    properdesktop::base::Timer m_timer;
+    properdesktop::base::Timer m_baselineTimer;
     Metrics m_metrics;
     History m_history;
     std::chrono::steady_clock::time_point m_historyClock = std::chrono::steady_clock::now();

@@ -95,7 +95,7 @@ std::string ProcessList::programName(const ProcessRecord& process)
 
     if (process.helperType.empty())
         return name;
-    return cutefish::i18n::format(cutefish::i18n::tr("{name} ({helper})"),
+    return properdesktop::i18n::format(properdesktop::i18n::tr("{name} ({helper})"),
                                   {{"name", name}, {"helper", ProcReader::helperName(process.helperType)}});
 }
 
@@ -126,7 +126,7 @@ bool ProcessList::lessThan(const ProcessRecord& left, const ProcessRecord& right
     if (m_sortColumn == "name") {
         if (left.displayName == right.displayName)
             return left.pid < right.pid;
-        return cutefish::base::Locale::system().compare(left.displayName, right.displayName) < 0;
+        return properdesktop::base::Locale::system().compare(left.displayName, right.displayName) < 0;
     }
     if (m_sortColumn == "pid")
         return left.pid < right.pid;

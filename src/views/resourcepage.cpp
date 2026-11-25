@@ -19,11 +19,11 @@
 #include <cmath>
 #include <iterator>
 
-using namespace cutefish::ui;
-using cutefish::i18n::format;
-using cutefish::i18n::tr;
-using cutefish::i18n::trn;
-using cutefish::i18n::trNoop;
+using namespace properdesktop::ui;
+using properdesktop::i18n::format;
+using properdesktop::i18n::tr;
+using properdesktop::i18n::trn;
+using properdesktop::i18n::trNoop;
 
 static constexpr double kTileWidth = 150;
 static constexpr double kTileSpacing = 12;

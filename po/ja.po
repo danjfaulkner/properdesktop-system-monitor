@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: cutefish-system-monitor\n"
-"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"Project-Id-Version: properdesktop-system-monitor\n"
+"Report-Msgid-Bugs-To: https://github.com/danjfaulkner\n"
 "POT-Creation-Date: 2026-11-23 23:43+0800\n"
 "PO-Revision-Date: 2026-10-19 22:12+0800\n"
 "Last-Translator: \n"
@@ -189,7 +189,7 @@ msgstr "ディスク"
 msgid "GPU {number}"
 msgstr "GPU {number}"
 
-#: src/views/mainwindow.cpp cutefish-system-monitor.desktop
+#: src/views/mainwindow.cpp properdesktop-system-monitor.desktop
 msgid "System Monitor"
 msgstr "システムモニタ"
 
@@ -615,11 +615,11 @@ msgstr "{total} 中 {used}"
 msgid "Active"
 msgstr "アクティブ"
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "View resource usage and manage running processes"
 msgstr "リソースの使用状況を表示し、実行中のプロセスを管理します"
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "CPU;Memory;Network;Disk;Processes;"
 msgstr "CPU;メモリ;ネットワーク;ディスク;プロセス;"
 

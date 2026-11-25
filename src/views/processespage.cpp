@@ -22,9 +22,9 @@
 #include <algorithm>
 #include <array>
 
-using namespace cutefish::ui;
-using cutefish::i18n::tr;
-using cutefish::i18n::trNoop;
+using namespace properdesktop::ui;
+using properdesktop::i18n::tr;
+using properdesktop::i18n::trNoop;
 
 static constexpr double kMargin = 12;
 static constexpr double kTop = 22;

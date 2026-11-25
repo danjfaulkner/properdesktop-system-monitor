@@ -17,9 +17,9 @@
 #include <cstring>
 #include <string>
 
-using namespace cutefish;
+using namespace properdesktop;
 
-static const char* const kService = "org.cutefish.SystemMonitor";
+static const char* const kService = "org.properdesktop.SystemMonitor";
 static const char* const kPath = "/SystemMonitor";
 
 // As the Qt version's command line: --help and --version, nothing else.
@@ -29,7 +29,7 @@ static int parseArguments(int argc, char** argv, bool* quit)
     for (int i = 1; i < argc; ++i) {
         const std::string argument = argv[i];
         if (argument == "-h" || argument == "--help" || argument == "-?") {
-            std::printf("Usage: %s [options]\nCutefish System Monitor\n\nOptions:\n"
+            std::printf("Usage: %s [options]\nProperDesktop System Monitor\n\nOptions:\n"
                         "  -h, --help     Displays help on commandline options.\n"
                         "  -v, --version  Displays version information.\n",
                         argv[0]);
@@ -37,7 +37,7 @@ static int parseArguments(int argc, char** argv, bool* quit)
             return 0;
         }
         if (argument == "-v" || argument == "--version") {
-            std::printf("cutefish-system-monitor %s\n", SYSTEM_MONITOR_VERSION);
+            std::printf("properdesktop-system-monitor %s\n", SYSTEM_MONITOR_VERSION);
             *quit = true;
             return 0;
         }
@@ -56,8 +56,8 @@ int main(int argc, char** argv)
         return status;
 
     ui::Application app(argc, argv);
-    app.setApplicationId("cutefish-system-monitor");
-    i18n::setDomain("cutefish-system-monitor");
+    app.setApplicationId("properdesktop-system-monitor");
+    i18n::setDomain("properdesktop-system-monitor");
     for (const auto& [name, svg] : embeddedIcons())
         ui::Icon::registerGlyph(std::string(name), std::string(svg));
 

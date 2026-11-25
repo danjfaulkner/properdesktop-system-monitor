@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cmath>
 
-using namespace cutefish::ui;
+using namespace properdesktop::ui;
 
 void HistoryGraph::setValues(std::vector<double> values)
 {

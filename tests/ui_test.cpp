@@ -40,8 +40,8 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-using namespace cutefish;
-using namespace cutefish::ui;
+using namespace properdesktop;
+using namespace properdesktop::ui;
 using namespace std::chrono_literals;
 
 namespace {
@@ -350,7 +350,7 @@ TEST(UiTest, LanguageChangeKeepsWhereTheUserWas)
     Fixture fixture;
     MainWindow& window = fixture.window;
     auto* search = static_cast<TextField*>(fixture.view("processSearch"));
-    search->setText("cutefish");
+    search->setText("properdesktop");
     search->onTextChanged();
     window.setCurrentPage(3);
     fixture.layout();
@@ -361,8 +361,8 @@ TEST(UiTest, LanguageChangeKeepsWhereTheUserWas)
     EXPECT_NE(fixture.view("processSearch"), before);
     EXPECT_EQ(window.currentPage(), 3);
     ASSERT_NE(fixture.view("resourceChart"), nullptr);
-    EXPECT_EQ(static_cast<TextField*>(fixture.view("processSearch"))->text(), "cutefish");
-    EXPECT_EQ(fixture.monitor.processes().search(), "cutefish");
+    EXPECT_EQ(static_cast<TextField*>(fixture.view("processSearch"))->text(), "properdesktop");
+    EXPECT_EQ(fixture.monitor.processes().search(), "properdesktop");
 }
 
 TEST(UiTest, TimestampedGraph)

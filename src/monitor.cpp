@@ -19,9 +19,9 @@
 #include <unordered_set>
 
 using namespace std::chrono_literals;
-using cutefish::i18n::format;
-using cutefish::i18n::tr;
-using cutefish::i18n::trNoop;
+using properdesktop::i18n::format;
+using properdesktop::i18n::tr;
+using properdesktop::i18n::trNoop;
 
 // Programs and application ids no process has named for this many samples are
 // looked up again if they return; titles some programs set make the set unbounded.
@@ -68,13 +68,13 @@ void Monitor::sample()
 {
     // A hung network mount blocks statfs; it must not stall the other measurements.
     if (!m_volumeJob.isPending())
-        m_volumeJob = cutefish::base::runInThread([] { return DiskReader::volumes(); },
+        m_volumeJob = properdesktop::base::runInThread([] { return DiskReader::volumes(); },
                                                   [this](std::vector<Volume> volumes) { m_volumes = std::move(volumes); });
 
     if (m_sampleJob.isPending())
         return;
     const auto reader = m_reader;
-    m_sampleJob = cutefish::base::runInThread([reader] { return reader->sample(); },
+    m_sampleJob = properdesktop::base::runInThread([reader] { return reader->sample(); },
                                               [this](Snapshot snapshot) { acceptSample(std::move(snapshot)); });
 }
 
@@ -430,7 +430,7 @@ std::string Monitor::formatBytes(double bytes)
     }
     // TRANSLATORS: a size, such as "1.5 MiB".
     return format(tr("{value} {unit}"),
-                  {{"value", cutefish::base::Locale::system().toString(bytes, unit == 0 ? 0 : 1)}, {"unit", tr(units[unit])}});
+                  {{"value", properdesktop::base::Locale::system().toString(bytes, unit == 0 ? 0 : 1)}, {"unit", tr(units[unit])}});
 }
 
 std::string Monitor::formatRate(double bytes)
@@ -440,17 +440,17 @@ std::string Monitor::formatRate(double bytes)
 
 std::string Monitor::formatPercent(double percent)
 {
-    return cutefish::base::Locale::system().toString(percent, 1) + '%';
+    return properdesktop::base::Locale::system().toString(percent, 1) + '%';
 }
 
 std::string Monitor::formatTemperature(double celsius)
 {
-    return cutefish::base::Locale::system().toString(celsius, 0) + " °C";
+    return properdesktop::base::Locale::system().toString(celsius, 0) + " °C";
 }
 
 std::string Monitor::formatPower(double watts)
 {
-    return cutefish::base::Locale::system().toString(watts, 1) + " W";
+    return properdesktop::base::Locale::system().toString(watts, 1) + " W";
 }
 
 std::string Monitor::formatDuration(int64_t seconds)

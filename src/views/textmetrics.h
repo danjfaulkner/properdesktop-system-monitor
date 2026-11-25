@@ -15,7 +15,7 @@ struct TextMetrics
     double capHeight = 0;
 };
 
-TextMetrics textMetrics(const cutefish::ui::Label* label);
+TextMetrics textMetrics(const properdesktop::ui::Label* label);
 
 // A logical length on the device pixel grid of the view's window.
-double snapToDevice(const cutefish::ui::View* view, double value);
+double snapToDevice(const properdesktop::ui::View* view, double value);

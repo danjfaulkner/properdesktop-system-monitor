@@ -16,10 +16,10 @@ class Monitor;
 class ProcessDetails
 {
 public:
-    ProcessDetails(cutefish::ui::Window* parent, Monitor& monitor, const Selection& target);
+    ProcessDetails(properdesktop::ui::Window* parent, Monitor& monitor, const Selection& target);
 
     void show();
-    cutefish::ui::Window* window() const { return m_dialog.window(); }
+    properdesktop::ui::Window* window() const { return m_dialog.window(); }
     const Selection& target() const { return m_target; }
 
     std::function<void()> onClosed;
@@ -31,7 +31,7 @@ private:
 
     Monitor& m_monitor;
     Selection m_target;
-    cutefish::ui::DialogWindow m_dialog;
+    properdesktop::ui::DialogWindow m_dialog;
     Content* m_content;
-    cutefish::base::Subscription m_updated;
+    properdesktop::base::Subscription m_updated;
 };

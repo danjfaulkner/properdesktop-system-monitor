@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(cutefish-system-monitor VERSION 1.0 LANGUAGES CXX)
+project(properdesktop-system-monitor VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(GNUInstallDirs)
 include(CTest)
 
-find_package(CutefishToolkit REQUIRED)
+find_package(ProperDesktopToolkit REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(ICU REQUIRED IMPORTED_TARGET icu-uc icu-i18n)
 
@@ -28,7 +28,7 @@ add_library(monitor-backend STATIC
     src/textutil.cpp
 )
 target_include_directories(monitor-backend PUBLIC src)
-target_link_libraries(monitor-backend PUBLIC Cutefish::ToolkitBase PRIVATE PkgConfig::ICU ${CMAKE_DL_LIBS})
+target_link_libraries(monitor-backend PUBLIC ProperDesktop::ToolkitBase PRIVATE PkgConfig::ICU ${CMAKE_DL_LIBS})
 
 # The glyphs, built in.
 file(GLOB SYSTEM_MONITOR_ICONS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/icons/*.svg)
@@ -55,7 +55,7 @@ add_library(monitor-ui STATIC
     ${SYSTEM_MONITOR_EMBEDDED}
 )
 target_include_directories(monitor-ui PUBLIC src src/views)
-target_link_libraries(monitor-ui PUBLIC monitor-backend Cutefish::Toolkit)
+target_link_libraries(monitor-ui PUBLIC monitor-backend ProperDesktop::Toolkit)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 target_compile_definitions(${PROJECT_NAME} PRIVATE SYSTEM_MONITOR_VERSION="${PROJECT_VERSION}")
@@ -63,8 +63,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE monitor-ui)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-cutefish_add_translations(cutefish-system-monitor SOURCES src DESKTOP_FILES cutefish-system-monitor.desktop)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cutefish-system-monitor.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+properdesktop_add_translations(properdesktop-system-monitor SOURCES src DESKTOP_FILES properdesktop-system-monitor.desktop)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/properdesktop-system-monitor.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 
 if(BUILD_TESTING)
     add_subdirectory(tests)

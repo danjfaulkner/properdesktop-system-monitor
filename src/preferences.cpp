@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-using cutefish::base::Settings;
+using properdesktop::base::Settings;
 
 Preferences Preferences::load(const std::string& path)
 {
@@ -33,5 +33,5 @@ void Preferences::save(const std::string& path) const
 
 std::string Preferences::defaultPath()
 {
-    return cutefish::base::paths::cutefishConfig("system-monitor");
+    return properdesktop::base::paths::properdesktopConfig("system-monitor");
 }

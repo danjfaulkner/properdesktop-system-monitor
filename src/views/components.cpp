@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <cmath>
 
-using namespace cutefish::ui;
+using namespace properdesktop::ui;
 
 static constexpr double kRowHeight = 44;
 static constexpr double kInset = 16;

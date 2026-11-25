@@ -210,15 +210,15 @@ TEST(ProcReaderTest, Volumes)
 TEST(ProcReaderTest, ScopesAndPss)
 {
     EXPECT_EQ(ProcReader::scopeApplication("0::/user.slice/user-1000.slice/user@1000.service/app.slice/"
-                                           "app-cutefish-cutefish\\x2dterminal-2091752.scope\n"),
-              "cutefish-terminal");
+                                           "app-properdesktop-properdesktop\\x2dterminal-2091752.scope\n"),
+              "properdesktop-terminal");
     EXPECT_EQ(ProcReader::scopeApplication("0::/user.slice/app.slice/app-org.example.Viewer-12.scope"),
               "org.example.Viewer");
     EXPECT_EQ(ProcReader::scopeApplication("0::/app.slice/app-gnome-org.example.Editor@3a9f.service"),
               "org.example.Editor");
     EXPECT_EQ(ProcReader::scopeApplication("0::/app.slice/app-org.example.Player.service"), "org.example.Player");
     EXPECT_EQ(ProcReader::scopeApplication("0::/user.slice/user-1000.slice/session-580.scope"), "");
-    EXPECT_EQ(ProcReader::scopeApplication("0::/app.slice/xdg-desktop-portal-cutefish.service"), "");
+    EXPECT_EQ(ProcReader::scopeApplication("0::/app.slice/xdg-desktop-portal-properdesktop.service"), "");
     EXPECT_EQ(ProcReader::scopeApplication("0::/app.slice/app-broken.scope"), "");
     EXPECT_EQ(ProcReader::scopeApplication({}), "");
 
@@ -257,7 +257,7 @@ TEST(ProcReaderTest, SampledScopesAndPss)
     EXPECT_EQ(snapshot.processes[2].memory, snapshot.processes[2].rss);
 
     // The launcher adopts the process into its scope after the first read.
-    ASSERT_TRUE(writeFile(proc + "/100/cgroup", "0::/user.slice/app.slice/app-cutefish-org.example.Viewer-100.scope\n"));
+    ASSERT_TRUE(writeFile(proc + "/100/cgroup", "0::/user.slice/app.slice/app-properdesktop-org.example.Viewer-100.scope\n"));
     snapshot = reader.sample();
     EXPECT_EQ(snapshot.processes[0].scopeId, "org.example.Viewer");
 
@@ -281,8 +281,8 @@ TEST(ProcReaderTest, SampledScopesAndPss)
 TEST(ProcReaderTest, DetailsExtras)
 {
     EXPECT_EQ(ProcReader::cgroupUnit("0::/user.slice/user-1000.slice/user@1000.service/app.slice/"
-                                     "app-cutefish-cutefish\\x2dterminal-2091752.scope\n"),
-              "app-cutefish-cutefish\\x2dterminal-2091752.scope");
+                                     "app-properdesktop-properdesktop\\x2dterminal-2091752.scope\n"),
+              "app-properdesktop-properdesktop\\x2dterminal-2091752.scope");
     EXPECT_EQ(ProcReader::cgroupUnit("12:cpu:/legacy\n0::/init.scope\n"), "init.scope");
     EXPECT_EQ(ProcReader::cgroupUnit("0::/\n"), "");
     EXPECT_EQ(ProcReader::cgroupUnit({}), "");

@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: cutefish-system-monitor\n"
-"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"Project-Id-Version: properdesktop-system-monitor\n"
+"Report-Msgid-Bugs-To: https://github.com/danjfaulkner\n"
 "POT-Creation-Date: 2026-11-23 23:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
@@ -190,7 +190,7 @@ msgstr ""
 msgid "GPU {number}"
 msgstr ""
 
-#: src/views/mainwindow.cpp cutefish-system-monitor.desktop
+#: src/views/mainwindow.cpp properdesktop-system-monitor.desktop
 msgid "System Monitor"
 msgstr ""
 
@@ -619,10 +619,10 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "View resource usage and manage running processes"
 msgstr ""
 
-#: cutefish-system-monitor.desktop
+#: properdesktop-system-monitor.desktop
 msgid "CPU;Memory;Network;Disk;Processes;"
 msgstr ""

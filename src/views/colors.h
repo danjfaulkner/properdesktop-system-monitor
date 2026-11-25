@@ -12,10 +12,10 @@
 enum class MonitorColor : uint16_t {
     // A plate that is there but takes no part: a disabled button, the
     // search scope's track.
-    MutedPlate = uint16_t(cutefish::ui::ColorId::ApplicationFirst),
+    MutedPlate = uint16_t(properdesktop::ui::ColorId::ApplicationFirst),
 };
 
-void addMonitorColors(cutefish::ui::ColorMixer& mixer, const cutefish::ui::Theme& theme);
+void addMonitorColors(properdesktop::ui::ColorMixer& mixer, const properdesktop::ui::Theme& theme);
 
 // Added before main by every program that names one of the colours.
-[[maybe_unused]] inline const bool monitorColorsAdded = (cutefish::ui::ColorProvider::addMixer(addMonitorColors), true);
+[[maybe_unused]] inline const bool monitorColorsAdded = (properdesktop::ui::ColorProvider::addMixer(addMonitorColors), true);

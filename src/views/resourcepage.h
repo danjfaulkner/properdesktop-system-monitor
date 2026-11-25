@@ -15,17 +15,17 @@ class Monitor;
 class SectionLabel;
 struct Gpu;
 
-namespace cutefish::ui {
+namespace properdesktop::ui {
 class Column;
 class ColumnLayout;
 class GridLayout;
 class Label;
 class ProgressBar;
-} // namespace cutefish::ui
+} // namespace properdesktop::ui
 
 // A resource's chart and details: CPU (1), memory (2), network (3), disks (4)
 // or one GPU (5 and on, in the order of Metrics::gpus).
-class ResourcePage : public cutefish::ui::ScrollView
+class ResourcePage : public properdesktop::ui::ScrollView
 {
 public:
     ResourcePage(Monitor& monitor, int page);
@@ -39,10 +39,10 @@ protected:
 private:
     struct Section
     {
-        cutefish::ui::ColumnLayout* column = nullptr;
+        properdesktop::ui::ColumnLayout* column = nullptr;
         SectionLabel* title = nullptr;
         ListCard* card = nullptr;
-        cutefish::ui::ProgressBar* usage = nullptr;
+        properdesktop::ui::ProgressBar* usage = nullptr;
         std::vector<InfoRow*> rows;
     };
     struct Tile;
@@ -52,20 +52,20 @@ private:
     const Gpu* gpu() const;
     void update();
     void updateChart();
-    Section addSection(cutefish::ui::View* parent, size_t rows);
-    cutefish::ui::Label* addHeading(const char* text);
+    Section addSection(properdesktop::ui::View* parent, size_t rows);
+    properdesktop::ui::Label* addHeading(const char* text);
 
     Monitor& m_monitor;
     int m_page;
-    cutefish::ui::Column* m_content;
+    properdesktop::ui::Column* m_content;
     // As the Qt version's ColumnLayout, inside the scrolled margins.
-    cutefish::ui::ColumnLayout* m_layout;
+    properdesktop::ui::ColumnLayout* m_layout;
     ChartCard* m_chart = nullptr;
-    cutefish::ui::GridLayout* m_cores = nullptr;
+    properdesktop::ui::GridLayout* m_cores = nullptr;
     std::vector<Tile*> m_tiles;
     ListCard* m_card = nullptr;
     std::vector<Section> m_sections;
     std::vector<Section> m_volumes;
     size_t m_built[3] = {0, 0, 0};
-    cutefish::base::Subscription m_updated;
+    properdesktop::base::Subscription m_updated;
 };
